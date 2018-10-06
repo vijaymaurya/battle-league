@@ -1,0 +1,13 @@
+{
+	"environment" : "development",
+	"PORT": 8081,
+	"mongo" : {
+		"development":{
+			"host" : "localhost",
+			"port" : 27017,
+			"database" : "lalaworld",
+			"username" : "",
+			"password" : ""
+		}
+	}
+}
