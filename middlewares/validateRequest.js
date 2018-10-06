@@ -12,6 +12,8 @@ module.exports = function(req, res, next) {
 		        res.status(400);
 		        res.json({"status": 400,"message": "Token Expired"});
 		        return;
+		    }else{
+			 	next();
 		    }
     	} 
     	catch (err) {
