@@ -1,17 +1,17 @@
-var jwt = require('jwt-simple'),
+let jwt = require('jwt-simple'),
     TOKEN_EXPIRY_DAY = require('../config/constants.js').TOKEN_EXPIRY_DAY;
 
-var auth = {
+let auth = {
  
   getAuthToken: function(req, res) {
-    var ipV4 = req.connection.remoteAddress;
+    let ipV4 = req.connection.remoteAddress;
       res.json(genToken(ipV4));
   }, 
 }
  
 function genToken(ipAddr) {
-  var expires = expiresIn(TOKEN_EXPIRY_DAY);
-  var token = jwt.encode({
+  let expires = expiresIn(TOKEN_EXPIRY_DAY);
+  let token = jwt.encode({
     exp: expires
   }, require('../config/secret')());
  
@@ -23,7 +23,7 @@ function genToken(ipAddr) {
 }
  
 function expiresIn(numDays) {
-  var dateObj = new Date();
+  let dateObj = new Date();
   return dateObj.setDate(dateObj.getDate() + numDays);
 }
  

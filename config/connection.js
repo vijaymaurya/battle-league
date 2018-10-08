@@ -1,10 +1,11 @@
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
     config = require('./masterConfig.json'),
     env = config.environment;
 
-
+//
 mongoose.connect('mongodb://' +config['mongo'][env]['host']+":"+config['mongo'][env]['port']+'/'+config['mongo'][env]['database']+'?readPreference=secondaryPreferred');
-var db = mongoose.connection;
+//mongoose.connect('mongodb://vijaymaurya57:<pwd>@ds123753.mlab.com:23753/league');
+let db = mongoose.connection;
 
 db.on('error', function (err) {
   // error on startup

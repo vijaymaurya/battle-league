@@ -1,12 +1,12 @@
-var jwt = require('jwt-simple');
+let jwt = require('jwt-simple');
  
 module.exports = function(req, res, next) {
   
-  var token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
+  let token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
  
   	if (token) {
     	try {
-	     	var decoded = jwt.decode(token, require('../config/secret.js')());
+	     	let decoded = jwt.decode(token, require('../config/secret.js')());
 		 
 		    if (decoded.exp <= Date.now()) {
 		        res.status(400);

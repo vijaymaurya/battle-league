@@ -1,9 +1,9 @@
-var mongoose = require('mongoose');
-var constants =  require('../config/constants');
+let mongoose = require('mongoose');
+let constants =  require('../config/constants');
 
-var battleModel = require('../models/battleModel.js');
+let battleModel = require('../models/battleModel.js');
 
-var battles = {
+let battles = {
 	getListing : function(req, res){
 
 		battleModel.distinct("location", function(err, data){
@@ -24,17 +24,17 @@ var battles = {
 
 	getStats : function(req, res){
 
-		// battleModel.find({}, function(err, count){
-		// 	if(err) console.log('err', err);
+		battleModel.find({}, function(err, count){
+			if(err) console.log('err', err);
 
 			//'most_active'
 			//'attacker_outcome'
 			//'battle_type',
 			//'defender_size'
 
-		// 	console.log('count', count);
-		// 	res.json(count);
-		// });
+			console.log('count', count);
+			res.json(count);
+		});
 	}
 
 }

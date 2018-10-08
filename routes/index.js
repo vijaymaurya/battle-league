@@ -1,14 +1,12 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
-var authController = require('../controllers/auth.js');
-var battleController = require('../controllers/battle.js');
-console.log('auth-', authController);
+let authController = require('../controllers/auth.js');
+let battleController = require('../controllers/battle.js');
 
 // Get Auth
 router.get('/getAuthToken', authController.getAuthToken);
 
-console.log('routes');
 // Main Api's routes
 router.get('/api/v1/battle/list', battleController.getListing);
 router.get('/api/v1/battle/count', battleController.getCount);

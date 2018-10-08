@@ -1,5 +1,5 @@
-var express  = require('express');
-var app = express();
+let express  = require('express');
+let app = express();
 
 // require('./connections/con-mongo');
 // require('./models/usersModel');
@@ -12,7 +12,7 @@ var app = express();
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
 
-var config = require('./config/masterConfig.json');
+let config = require('./config/masterConfig.json');
 
 app.listen(config.PORT);
 console.log("App listening on port ",config.PORT);
