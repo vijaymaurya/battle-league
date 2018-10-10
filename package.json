@@ -1,5 +1,5 @@
 {
-  "name": "battle league",
+  "name": "battle-league",
   "version": "1.0.0",
   "description": "Api for battle details",
   "main": "server.js",
@@ -9,6 +9,6 @@
   "dependencies": {
     "express": "^4.14.1",
     "mongoose": "^5.0.10",
-    "jwt-simple": "*" 
+    "jwt-simple": "*"
   }
 }
