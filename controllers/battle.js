@@ -35,6 +35,46 @@ let battles = {
 			console.log('count', count);
 			res.json(count);
 		});
+	},
+	searchRecords : function(req, resp){
+
+		if(req.query){
+			let queryString = {};
+			Object.keys(req.query).forEach(function(key){
+				switch(key){
+					case 'battle_name':
+						if(req.query.battle_name != '')
+							queryString['name'] = req.query.battle_name;
+						break;
+					case 'location':
+							if(req.query.location != '')
+						queryString['location'] = req.query.location;
+						break;
+					default:
+						break;
+				}
+			});
+
+			if(queryString && Object.keys(queryString).length > 0){
+
+				let selected = {'_id' : 0, 'name' : 1, 'battle_number' : 1, 'location' : 1};
+
+				battleModel.find(queryString, selected, function(err, data){
+					if(err){
+						console.log('err', err);
+						resp.json('Something went wrong');
+					} 
+
+					if(Object.keys(data).length > 0){
+						resp.json(data);
+					}else{
+						resp.json('No record found');
+					}
+				});
+			}else{
+				resp.json('Invalid Parameters');
+			}
+		}
 	}
 
 }

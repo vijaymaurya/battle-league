@@ -11,7 +11,7 @@ router.get('/getAuthToken', authController.getAuthToken);
 router.get('/api/v1/battle/list', battleController.getListing);
 router.get('/api/v1/battle/count', battleController.getCount);
 router.get('/api/v1/battle/stats', battleController.getStats);
-//router.post('/api/v1/battle/search', battleController.searchRecords);
+router.get('/api/v1/battle/search', battleController.searchRecords);
 
 router.all('*',function(req, res){
 	res.status(404);
