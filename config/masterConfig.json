@@ -1,5 +1,5 @@
 {
-	"environment" : "development",
+	"environment" : "staging",
 	"PORT": 8081,
 	"mongo" : {
 		"development":{
@@ -8,6 +8,13 @@
 			"database" : "league",
 			"username" : "",
 			"password" : ""
+		},		
+		"staging":{
+			"host" : "ds123753.mlab.com",
+			"port" : 23753,
+			"database" : "league",
+			"username" : "battle_league",
+			"password" : "YajoacCuOrephu6"
 		}
 	}
 }
