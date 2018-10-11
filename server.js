@@ -15,7 +15,7 @@ let app = express();
 let config = require('./config/masterConfig.json');
 
 let server = app.listen(config.PORT);
-console.log("App listening on port ", server.address().port);
+console.log("App listening on port ", server.address().port, server.address().address);
 
 
 app.all('/*', function(req, res, next) {
